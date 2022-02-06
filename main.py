@@ -1,8 +1,7 @@
 import pickle
 import requests
 
-r = requests.get("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data")
-data = r.text
+data = requests.get("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data").text
 
 list_of_lists = [[y for y in x.split(",")] for x in data.splitlines() if x != ""]
 
